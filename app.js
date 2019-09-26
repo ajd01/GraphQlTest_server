@@ -2,11 +2,14 @@ const express = require('express')
 const grapqlHTTP = require('express-graphql')
 const schema = require('./schema/schema')
 const mongoose = require('mongoose')
+const cors = require('cors')
 
 const app = express()
 
-mongoose
-  .connect('')
+app.use(cors())
+
+mongoose 
+  .connect()
   .catch(err => {
     console.log(err)
   })
